@@ -1,0 +1,43 @@
+{
+  "name": "bugbuster",
+  "version": "1.0.0",
+  "description": "BugBuster — Autonomous Find-Fix-Verify AI Developer Assistant | Track 4: Developer Tools & Open Innovation",
+  "type": "module",
+  "main": "server/index.js",
+  "bin": {
+    "bugbuster": "./bin/bugbuster.js"
+  },
+  "scripts": {
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"cyan,magenta\" \"node --watch server/index.js\" \"vite\"",
+    "server": "node --watch server/index.js",
+    "client": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "cli": "node bin/bugbuster.js",
+    "test": "node test_all.js"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "cors": "^2.8.5",
+    "diff": "^7.0.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "lucide-react": "^0.475.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "vite": "^6.1.0"
+  },
+  "keywords": [
+    "devsecops",
+    "ai-agent",
+    "vulnerability-scanner",
+    "automated-testing",
+    "hack-it-bros-26"
+  ],
+  "author": "BugBuster Team",
+  "license": "MIT"
+}
