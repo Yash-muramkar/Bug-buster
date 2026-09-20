@@ -122,6 +122,13 @@ export function InputPanel({
             </button>
             <button
               type="button"
+              onClick={() => handleSelectSampleRepo('https://github.com/DerivativeJRM07/gaming_data_analysis')}
+              style={{ background: '#fdf2f8', border: '1px solid #fbcfe8', color: '#9d174d', borderRadius: '14px', padding: '3px 10px', fontSize: '11px', fontWeight: 600 }}
+            >
+              🎮 DerivativeJRM07/gaming_data_analysis (Notebook IPYNB)
+            </button>
+            <button
+              type="button"
               onClick={() => handleSelectSampleRepo('https://github.com/enterprise-fintech/payment-gateway/pull/482')}
               style={{ background: '#eff6ff', border: '1px solid #bfdbfe', color: '#1d4ed8', borderRadius: '14px', padding: '3px 10px', fontSize: '11px', fontWeight: 600 }}
             >
