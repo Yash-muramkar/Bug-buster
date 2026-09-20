@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Production Build Output
+dist/
+
+# Sandbox ephemeral run folders
+server/sandbox/run_*
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
