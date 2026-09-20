@@ -2,12 +2,15 @@ import { spawn } from 'node:child_process';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { applyPatch } from './patcher.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const SANDBOX_BASE = path.resolve(__dirname, '../sandbox');
+const SANDBOX_BASE = process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME
+  ? path.join(os.tmpdir(), 'bugbuster-sandbox')
+  : path.resolve(__dirname, '../sandbox');
 
 /**
  * Ensures the sandbox base directory exists.

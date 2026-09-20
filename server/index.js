@@ -145,8 +145,12 @@ app.post('/api/github/export-comment', (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`\n🚀 [BugBuster Engine] Server listening on http://localhost:${PORT}`);
-  console.log(`🛡️  Live Sandbox Engine: READY (Node.js ${process.version})`);
-  console.log(`📦 Loaded ${BENCHMARK_PRESETS.length} real-world vulnerability benchmark suites.\n`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`\n🚀 [BugBuster Engine] Server listening on http://localhost:${PORT}`);
+    console.log(`🛡️  Live Sandbox Engine: READY (Node.js ${process.version})`);
+    console.log(`📦 Loaded ${BENCHMARK_PRESETS.length} real-world vulnerability benchmark suites.\n`);
+  });
+}
+
+export default app;
